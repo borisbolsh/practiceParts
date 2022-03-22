@@ -21,20 +21,88 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lIl-42-fyM">
-                                    <size key="itemSize" width="379" height="379"/>
+                                    <size key="itemSize" width="379" height="792"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellId" id="59y-za-mo9">
-                                        <rect key="frame" x="17.5" y="0.0" width="379" height="379"/>
+                                        <rect key="frame" x="17.5" y="0.0" width="379" height="792"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ek9-SZ-ASW">
-                                            <rect key="frame" x="0.0" y="0.0" width="379" height="379"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="379" height="792"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nC8-G1-cF8">
+                                                    <rect key="frame" x="0.0" y="115.5" width="379" height="561"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eje-6O-SuS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="379" height="379"/>
+                                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Eje-6O-SuS" secondAttribute="height" multiplier="1:1" id="KWM-S8-Utv"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fw9-5g-Ehy">
+                                                            <rect key="frame" x="0.0" y="379" width="379" height="128"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food at its best!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIO-xT-L7r">
+                                                                    <rect key="frame" x="24" y="24" width="331" height="80"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="qIO-xT-L7r" secondAttribute="trailing" constant="24" id="CsX-gi-BHS"/>
+                                                                <constraint firstItem="qIO-xT-L7r" firstAttribute="leading" secondItem="fw9-5g-Ehy" secondAttribute="leading" constant="24" id="Igu-vd-Q3z"/>
+                                                                <constraint firstAttribute="bottom" secondItem="qIO-xT-L7r" secondAttribute="bottom" constant="24" id="KWS-C7-HyT"/>
+                                                                <constraint firstItem="qIO-xT-L7r" firstAttribute="top" secondItem="fw9-5g-Ehy" secondAttribute="top" constant="24" id="jlL-uU-O3g"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mph-Ej-Oqk">
+                                                            <rect key="frame" x="0.0" y="507" width="379" height="54"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRQ-0a-y5Y">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="54"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="fRQ-0a-y5Y" secondAttribute="height" multiplier="1:2" id="Obc-gf-JOh"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcG-3N-UON">
+                                                                    <rect key="frame" x="27" y="0.0" width="325" height="54"/>
+                                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="54" id="Ehr-ZX-g6y"/>
+                                                                    </constraints>
+                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" title="Get started">
+                                                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                                                    </buttonConfiguration>
+                                                                </button>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wC-RS-gXp">
+                                                                    <rect key="frame" x="352" y="0.0" width="27" height="54"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="6wC-RS-gXp" secondAttribute="height" multiplier="1:2" id="3yU-Ml-jFy"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nC8-G1-cF8" firstAttribute="centerY" secondItem="Ek9-SZ-ASW" secondAttribute="centerY" id="51O-Q9-5Qq"/>
+                                                <constraint firstItem="nC8-G1-cF8" firstAttribute="leading" secondItem="Ek9-SZ-ASW" secondAttribute="leading" id="c3I-80-u4x"/>
+                                                <constraint firstAttribute="trailing" secondItem="nC8-G1-cF8" secondAttribute="trailing" id="dEV-d3-7FW"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="379" height="379"/>
+                                        <size key="customSize" width="379" height="792"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -60,6 +128,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
