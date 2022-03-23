@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellId" id="59y-za-mo9">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellId" id="59y-za-mo9" customClass="OnboardingCollectionViewCell" customModule="OnboardingApp" customModuleProvider="target">
                                         <rect key="frame" x="17.5" y="0.0" width="379" height="792"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ek9-SZ-ASW">
@@ -47,7 +47,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fw9-5g-Ehy">
                                                             <rect key="frame" x="0.0" y="379" width="379" height="128"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food at its best!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIO-xT-L7r">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food at its best!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIO-xT-L7r">
                                                                     <rect key="frame" x="24" y="24" width="331" height="80"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                     <nil key="textColor"/>
@@ -83,6 +83,9 @@
                                                                     <buttonConfiguration key="configuration" style="plain" title="Get started">
                                                                         <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                                                     </buttonConfiguration>
+                                                                    <connections>
+                                                                        <action selector="actionButtonTapped:" destination="59y-za-mo9" eventType="touchUpInside" id="3OY-LZ-OBn"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wC-RS-gXp">
                                                                     <rect key="frame" x="352" y="0.0" width="27" height="54"/>
@@ -103,6 +106,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="379" height="792"/>
+                                        <connections>
+                                            <outlet property="actionButton" destination="CcG-3N-UON" id="21Y-lY-RWl"/>
+                                            <outlet property="animationView" destination="Eje-6O-SuS" id="iTf-hU-Nh7"/>
+                                            <outlet property="titleLabel" destination="qIO-xT-L7r" id="g9d-5f-Yct"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

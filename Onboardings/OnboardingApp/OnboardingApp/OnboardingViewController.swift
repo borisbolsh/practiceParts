@@ -2,6 +2,7 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
 
+    private let slides: [SlideModel] = SlideModel.collection
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -26,12 +27,18 @@ final class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        slides.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellId", for: indexPath)
-
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "CellId",
+            for: indexPath
+        ) as? OnboardingCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let slide = slides[indexPath.item]
+        cell.configure(with: slide)
         return cell
     }
 

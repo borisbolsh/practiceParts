@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45383ED027EBA4360097E0FB /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45383ECF27EBA4360097E0FB /* OnboardingCollectionViewCell.swift */; };
+		45383ED227EBA8F40097E0FB /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45383ED127EBA8F40097E0FB /* SlideModel.swift */; };
 		45392DBA27E90192005A1862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45392DB927E90192005A1862 /* AppDelegate.swift */; };
 		45392DBC27E90192005A1862 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45392DBB27E90192005A1862 /* SceneDelegate.swift */; };
 		45392DBE27E90192005A1862 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45392DBD27E90192005A1862 /* OnboardingViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45383ECF27EBA4360097E0FB /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		45383ED127EBA8F40097E0FB /* SlideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
 		45392DB627E90192005A1862 /* OnboardingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45392DB927E90192005A1862 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45392DBB27E90192005A1862 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				45392DB927E90192005A1862 /* AppDelegate.swift */,
 				45392DBB27E90192005A1862 /* SceneDelegate.swift */,
 				45392DBD27E90192005A1862 /* OnboardingViewController.swift */,
+				45383ED127EBA8F40097E0FB /* SlideModel.swift */,
+				45383ECF27EBA4360097E0FB /* OnboardingCollectionViewCell.swift */,
 				45392DBF27E90192005A1862 /* Main.storyboard */,
 				45392DC227E90193005A1862 /* Assets.xcassets */,
 				45392DC427E90193005A1862 /* LaunchScreen.storyboard */,
@@ -141,6 +147,8 @@
 				45392DBE27E90192005A1862 /* OnboardingViewController.swift in Sources */,
 				45392DBA27E90192005A1862 /* AppDelegate.swift in Sources */,
 				45392DBC27E90192005A1862 /* SceneDelegate.swift in Sources */,
+				45383ED227EBA8F40097E0FB /* SlideModel.swift in Sources */,
+				45383ED027EBA4360097E0FB /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
