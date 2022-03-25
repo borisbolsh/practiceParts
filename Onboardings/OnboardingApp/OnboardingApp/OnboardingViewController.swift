@@ -23,6 +23,30 @@ final class OnboardingViewController: UIViewController {
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.isPagingEnabled = true
     }
+
+    private func actionButtonTappedHandler(at indexPath: IndexPath) {
+        if indexPath.item == slides.count - 1 {
+            showMainScreen()
+        } else {
+            let nextItem = indexPath.item + 1
+            let nextIndexPath = IndexPath(item: nextItem, section: 0)
+            collectionView.scrollToItem(at: nextIndexPath, at: .top, animated: true)
+        }
+    }
+
+    private func showMainScreen() {
+        let mainScreenViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainScreenViewController")
+
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window {
+
+            window.rootViewController = mainScreenViewController
+            UIView.transition(with: window,
+                              duration: 0.25,
+                              options: .transitionCrossDissolve,
+                              animations: nil,
+                              completion: nil)
+        }
+    }
 }
 
 extension OnboardingViewController: UICollectionViewDataSource {
@@ -39,6 +63,9 @@ extension OnboardingViewController: UICollectionViewDataSource {
         }
         let slide = slides[indexPath.item]
         cell.configure(with: slide)
+        cell.actionButtonDidTap = {
+            self.actionButtonTappedHandler(at: indexPath)
+        }
         return cell
     }
 
