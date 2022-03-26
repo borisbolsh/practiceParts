@@ -19,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MFR-da-lcD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lIl-42-fyM">
                                     <size key="itemSize" width="379" height="792"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -114,18 +114,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="zkI-VE-Jcb">
+                                <rect key="frame" x="312.5" y="60" width="97.5" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
+                                <color key="currentPageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MFR-da-lcD" secondAttribute="trailing" id="0qu-ju-Q6h"/>
+                            <constraint firstItem="zkI-VE-Jcb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="1lv-ZG-TwV"/>
                             <constraint firstItem="MFR-da-lcD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TEw-gS-fyV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zkI-VE-Jcb" secondAttribute="trailing" constant="4" id="iFb-KF-F2Q"/>
                             <constraint firstItem="MFR-da-lcD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oWi-sc-m5U"/>
                             <constraint firstAttribute="bottom" secondItem="MFR-da-lcD" secondAttribute="bottom" id="ons-ua-VVx"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="MFR-da-lcD" id="5Av-45-Kgy"/>
+                        <outlet property="pageControl" destination="zkI-VE-Jcb" id="ODs-qj-xD2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -166,6 +174,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -2,6 +2,7 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
 
+    @IBOutlet weak var pageControl: UIPageControl!
     private let slides: [SlideModel] = SlideModel.collection
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -9,6 +10,7 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
 
         setUpCollectionView()
+        setUpPageControl()
     }
 
     private func setUpCollectionView(){
@@ -31,6 +33,7 @@ final class OnboardingViewController: UIViewController {
             let nextItem = indexPath.item + 1
             let nextIndexPath = IndexPath(item: nextItem, section: 0)
             collectionView.scrollToItem(at: nextIndexPath, at: .top, animated: true)
+            pageControl.currentPage = nextItem
         }
     }
 
@@ -46,6 +49,17 @@ final class OnboardingViewController: UIViewController {
                               animations: nil,
                               completion: nil)
         }
+    }
+
+    private func setUpPageControl() {
+        pageControl.numberOfPages = slides.count
+        let angle = CGFloat.pi/2
+        pageControl.transform = CGAffineTransform(rotationAngle: angle)
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = Int(collectionView.contentOffset.y / scrollView.frame.size.height)
+        pageControl.currentPage = index
     }
 }
 
