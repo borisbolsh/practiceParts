@@ -28,6 +28,7 @@
 		45377C822891D47B0027717F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45377C842891D47B0027717F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		458EF2582891D8640001E19C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		45FBDD7F2892575C0074D89A /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
 		6805790695A155E4C771B848 /* Pods-RxApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxApp.debug.xcconfig"; path = "Target Support Files/Pods-RxApp/Pods-RxApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EF941E2C798A8C57776B6762 /* Pods_RxApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +77,7 @@
 				45377C762891D4790027717F /* AppDelegate.swift */,
 				45377C782891D4790027717F /* SceneDelegate.swift */,
 				45377C7A2891D4790027717F /* ViewController.swift */,
+				45FBDD7F2892575C0074D89A /* restaurants.json */,
 				458EF2582891D8640001E19C /* AppCoordinator.swift */,
 				45377C7C2891D4790027717F /* Main.storyboard */,
 				45377C7F2891D47B0027717F /* Assets.xcassets */,
