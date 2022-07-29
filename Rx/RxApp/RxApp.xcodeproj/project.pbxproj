@@ -13,7 +13,11 @@
 		45377C7E2891D4790027717F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45377C7C2891D4790027717F /* Main.storyboard */; };
 		45377C802891D47B0027717F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45377C7F2891D47B0027717F /* Assets.xcassets */; };
 		45377C832891D47B0027717F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45377C812891D47B0027717F /* LaunchScreen.storyboard */; };
+		455FCD4F2893A599005F6796 /* RestaurantsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455FCD4E2893A599005F6796 /* RestaurantsListViewModel.swift */; };
+		455FCD522893A6ED005F6796 /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455FCD512893A6ED005F6796 /* RestaurantViewModel.swift */; };
 		458EF2592891D8640001E19C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458EF2582891D8640001E19C /* AppCoordinator.swift */; };
+		45DDA37528932B0D00119B89 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DDA37428932B0D00119B89 /* Restaurant.swift */; };
+		45DDA37728932FDA00119B89 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DDA37628932FDA00119B89 /* RestaurantService.swift */; };
 		BA8CAE15C529874280F4CF5F /* Pods_RxApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF941E2C798A8C57776B6762 /* Pods_RxApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +31,11 @@
 		45377C7F2891D47B0027717F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45377C822891D47B0027717F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45377C842891D47B0027717F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		455FCD4E2893A599005F6796 /* RestaurantsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListViewModel.swift; sourceTree = "<group>"; };
+		455FCD512893A6ED005F6796 /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
 		458EF2582891D8640001E19C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		45DDA37428932B0D00119B89 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		45DDA37628932FDA00119B89 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
 		45FBDD7F2892575C0074D89A /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
 		6805790695A155E4C771B848 /* Pods-RxApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxApp.debug.xcconfig"; path = "Target Support Files/Pods-RxApp/Pods-RxApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EF941E2C798A8C57776B6762 /* Pods_RxApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,17 +82,77 @@
 		45377C752891D4790027717F /* RxApp */ = {
 			isa = PBXGroup;
 			children = (
-				45377C762891D4790027717F /* AppDelegate.swift */,
-				45377C782891D4790027717F /* SceneDelegate.swift */,
-				45377C7A2891D4790027717F /* ViewController.swift */,
-				45FBDD7F2892575C0074D89A /* restaurants.json */,
-				458EF2582891D8640001E19C /* AppCoordinator.swift */,
-				45377C7C2891D4790027717F /* Main.storyboard */,
-				45377C7F2891D47B0027717F /* Assets.xcassets */,
-				45377C812891D47B0027717F /* LaunchScreen.storyboard */,
+				45DDA3702893297A00119B89 /* App */,
+				45DDA371289329AD00119B89 /* Flow */,
+				45DDA37828932FEE00119B89 /* Services */,
+				45DDA372289329BF00119B89 /* Screens */,
+				45DDA36F2893295C00119B89 /* Resources */,
 				45377C842891D47B0027717F /* Info.plist */,
 			);
 			path = RxApp;
+			sourceTree = "<group>";
+		};
+		455FCD502893A650005F6796 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				455FCD4E2893A599005F6796 /* RestaurantsListViewModel.swift */,
+				455FCD512893A6ED005F6796 /* RestaurantViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		45DDA36F2893295C00119B89 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45FBDD7F2892575C0074D89A /* restaurants.json */,
+				45377C7F2891D47B0027717F /* Assets.xcassets */,
+				45377C812891D47B0027717F /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45DDA3702893297A00119B89 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				45377C762891D4790027717F /* AppDelegate.swift */,
+				45377C782891D4790027717F /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		45DDA371289329AD00119B89 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				458EF2582891D8640001E19C /* AppCoordinator.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		45DDA372289329BF00119B89 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				45DDA373289329D500119B89 /* Main */,
+				45377C7C2891D4790027717F /* Main.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		45DDA373289329D500119B89 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				45377C7A2891D4790027717F /* ViewController.swift */,
+				45DDA37428932B0D00119B89 /* Restaurant.swift */,
+				455FCD502893A650005F6796 /* ViewModels */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		45DDA37828932FEE00119B89 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				45DDA37628932FDA00119B89 /* RestaurantService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		C2E478120DF3F58052905A8F /* Pods */ = {
@@ -211,9 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DDA37528932B0D00119B89 /* Restaurant.swift in Sources */,
+				455FCD522893A6ED005F6796 /* RestaurantViewModel.swift in Sources */,
 				458EF2592891D8640001E19C /* AppCoordinator.swift in Sources */,
 				45377C7B2891D4790027717F /* ViewController.swift in Sources */,
 				45377C772891D4790027717F /* AppDelegate.swift in Sources */,
+				45DDA37728932FDA00119B89 /* RestaurantService.swift in Sources */,
+				455FCD4F2893A599005F6796 /* RestaurantsListViewModel.swift in Sources */,
 				45377C792891D4790027717F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
