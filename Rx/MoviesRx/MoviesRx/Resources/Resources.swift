@@ -20,5 +20,16 @@ final class Resources {
 			static let mediumPriority = "Medium"
 			static let highPriority = "High"
 		}
+		
+		enum MovieList {
+			static let titleTextFieldPlaceholder = "Task title"
+			static let descrTextFieldPlaceholder = "Task desription"
+		}
+
+		enum MovieListSegmentControl {
+			static let new = "New"
+			static let popular = "Popular"
+			static let upcoming = "Upcoming"
+		}
 	}
 }

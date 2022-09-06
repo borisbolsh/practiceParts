@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4531EB2128C7C02000911B02 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531EB2028C7C02000911B02 /* MainTabController.swift */; };
+		4531EB2428C7C12400911B02 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531EB2328C7C12400911B02 /* MovieListViewController.swift */; };
+		4531EB2728C7C16300911B02 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531EB2628C7C16300911B02 /* MovieSearchViewController.swift */; };
+		4531EB2928C7C18000911B02 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531EB2828C7C18000911B02 /* Movie.swift */; };
+		4531EB2C28C7CF6E00911B02 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531EB2B28C7CF6E00911B02 /* UIImage+Ext.swift */; };
 		453D722428C46E0D00A509B8 /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453D722328C46E0D00A509B8 /* AddNewTaskViewController.swift */; };
+		4581593728C6995D0025BD7A /* MovieServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581593628C6995D0025BD7A /* MovieServiceProtocol.swift */; };
 		4587155128C3DF0E00F69EF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587155028C3DF0E00F69EF5 /* AppDelegate.swift */; };
 		4587155328C3DF0E00F69EF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587155228C3DF0E00F69EF5 /* SceneDelegate.swift */; };
 		4587155528C3DF0E00F69EF5 /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587155428C3DF0E00F69EF5 /* TasksListViewController.swift */; };
@@ -21,7 +27,13 @@
 
 /* Begin PBXFileReference section */
 		25E96723C08FE0F2E70361B6 /* Pods-RxToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxToDoList.release.xcconfig"; path = "Target Support Files/Pods-RxToDoList/Pods-RxToDoList.release.xcconfig"; sourceTree = "<group>"; };
+		4531EB2028C7C02000911B02 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		4531EB2328C7C12400911B02 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		4531EB2628C7C16300911B02 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
+		4531EB2828C7C18000911B02 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		4531EB2B28C7CF6E00911B02 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		453D722328C46E0D00A509B8 /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
+		4581593628C6995D0025BD7A /* MovieServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceProtocol.swift; sourceTree = "<group>"; };
 		4587154D28C3DF0E00F69EF5 /* MoviesRx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesRx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4587155028C3DF0E00F69EF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4587155228C3DF0E00F69EF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +62,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4531EB2228C7C10B00911B02 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				4531EB2328C7C12400911B02 /* MovieListViewController.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		4531EB2528C7C13100911B02 /* MovieSearch */ = {
+			isa = PBXGroup;
+			children = (
+				4531EB2628C7C16300911B02 /* MovieSearchViewController.swift */,
+			);
+			path = MovieSearch;
+			sourceTree = "<group>";
+		};
+		4531EB2A28C7CF5100911B02 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4531EB2B28C7CF6E00911B02 /* UIImage+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4581593428C699070025BD7A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4581593528C699430025BD7A /* Protocols */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4581593528C699430025BD7A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4581593628C6995D0025BD7A /* MovieServiceProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		4587154428C3DF0D00F69EF5 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +123,8 @@
 		4587154F28C3DF0E00F69EF5 /* MoviesRx */ = {
 			isa = PBXGroup;
 			children = (
+				4531EB2A28C7CF5100911B02 /* Extensions */,
+				4581593428C699070025BD7A /* Services */,
 				4587156928C3E49B00F69EF5 /* AppDelegate */,
 				4587156728C3E41900F69EF5 /* Models */,
 				45C6DBF828C4CCBD0015F19C /* Screens */,
@@ -93,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4587156A28C3E5B100F69EF5 /* Task.swift */,
+				4531EB2828C7C18000911B02 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,8 +182,11 @@
 		45C6DBF828C4CCBD0015F19C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4531EB2228C7C10B00911B02 /* MovieList */,
+				4531EB2528C7C13100911B02 /* MovieSearch */,
 				45C6DBF928C4CCE50015F19C /* AddNewTask */,
 				4587156428C3DF7D00F69EF5 /* TasksList */,
+				4531EB2028C7C02000911B02 /* MainTabController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -274,10 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4581593728C6995D0025BD7A /* MovieServiceProtocol.swift in Sources */,
+				4531EB2428C7C12400911B02 /* MovieListViewController.swift in Sources */,
+				4531EB2928C7C18000911B02 /* Movie.swift in Sources */,
 				4587156B28C3E5B100F69EF5 /* Task.swift in Sources */,
+				4531EB2728C7C16300911B02 /* MovieSearchViewController.swift in Sources */,
 				4587155528C3DF0E00F69EF5 /* TasksListViewController.swift in Sources */,
+				4531EB2C28C7CF6E00911B02 /* UIImage+Ext.swift in Sources */,
 				4587155128C3DF0E00F69EF5 /* AppDelegate.swift in Sources */,
 				4587157028C3F60800F69EF5 /* Resources.swift in Sources */,
+				4531EB2128C7C02000911B02 /* MainTabController.swift in Sources */,
 				4587155328C3DF0E00F69EF5 /* SceneDelegate.swift in Sources */,
 				453D722428C46E0D00A509B8 /* AddNewTaskViewController.swift in Sources */,
 				4587156E28C3EED400F69EF5 /* TaskCell.swift in Sources */,
