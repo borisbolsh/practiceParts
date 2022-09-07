@@ -22,6 +22,8 @@
 		4587156B28C3E5B100F69EF5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587156A28C3E5B100F69EF5 /* Task.swift */; };
 		4587156E28C3EED400F69EF5 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587156D28C3EED400F69EF5 /* TaskCell.swift */; };
 		4587157028C3F60800F69EF5 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587156F28C3F60800F69EF5 /* Resources.swift */; };
+		45A30E8828C92DA400C84019 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A30E8728C92DA400C84019 /* MovieCell.swift */; };
+		45A30E8B28C9361100C84019 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A30E8A28C9361100C84019 /* MovieViewModel.swift */; };
 		4B7E19E79F3037D212B135CA /* Pods_MoviesRx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87E1EFEA23DEB539D76C714 /* Pods_MoviesRx.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		4587156A28C3E5B100F69EF5 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		4587156D28C3EED400F69EF5 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		4587156F28C3F60800F69EF5 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		45A30E8728C92DA400C84019 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		45A30E8A28C9361100C84019 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		5755DE4A0BFA643B48B4D6AC /* Pods-RxToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxToDoList.debug.xcconfig"; path = "Target Support Files/Pods-RxToDoList/Pods-RxToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 		71F63594382CD4AED22D24F2 /* Pods-MoviesRx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesRx.release.xcconfig"; path = "Target Support Files/Pods-MoviesRx/Pods-MoviesRx.release.xcconfig"; sourceTree = "<group>"; };
 		B629A7E6C8AFEAB0ABB28E32 /* Pods-MoviesRx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesRx.debug.xcconfig"; path = "Target Support Files/Pods-MoviesRx/Pods-MoviesRx.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				4531EB2328C7C12400911B02 /* MovieListViewController.swift */,
+				45A30E8928C935F800C84019 /* ViewModels */,
+				45A30E8628C92D9400C84019 /* Cell */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -177,6 +183,22 @@
 				4587156D28C3EED400F69EF5 /* TaskCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		45A30E8628C92D9400C84019 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				45A30E8728C92DA400C84019 /* MovieCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		45A30E8928C935F800C84019 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				45A30E8A28C9361100C84019 /* MovieViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		45C6DBF828C4CCBD0015F19C /* Screens */ = {
@@ -332,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A30E8828C92DA400C84019 /* MovieCell.swift in Sources */,
 				4581593728C6995D0025BD7A /* MovieServiceProtocol.swift in Sources */,
 				4531EB2428C7C12400911B02 /* MovieListViewController.swift in Sources */,
 				4531EB2928C7C18000911B02 /* Movie.swift in Sources */,
@@ -342,6 +365,7 @@
 				4587155128C3DF0E00F69EF5 /* AppDelegate.swift in Sources */,
 				4587157028C3F60800F69EF5 /* Resources.swift in Sources */,
 				4531EB2128C7C02000911B02 /* MainTabController.swift in Sources */,
+				45A30E8B28C9361100C84019 /* MovieViewModel.swift in Sources */,
 				4587155328C3DF0E00F69EF5 /* SceneDelegate.swift in Sources */,
 				453D722428C46E0D00A509B8 /* AddNewTaskViewController.swift in Sources */,
 				4587156E28C3EED400F69EF5 /* TaskCell.swift in Sources */,
