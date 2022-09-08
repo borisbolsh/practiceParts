@@ -6,6 +6,8 @@ protocol MovieCellInput {
 }
 
 final class MovieCell: UITableViewCell {
+	static let cellHeight: CGFloat = 148
+
 	private let posterImageView = UIImageView()
 	private let titleLabel = UILabel()
 	private let overviewLabel = UILabel()
@@ -26,40 +28,44 @@ final class MovieCell: UITableViewCell {
 	}
 
 	private func setupUI() {
-//		contentView.addSubview(launchView)
-//		launchView.addSubview(titleLabel)
-//		launchView.addSubview(dateLabel)
-//		launchView.addSubview(statusImageView)
+		contentView.addSubview(posterImageView)
+		contentView.addSubview(titleLabel)
+		contentView.addSubview(overviewLabel)
+		contentView.addSubview(releaseDateLabel)
+		contentView.addSubview(ratingLabel)
 	}
 
 	private func setupConstraints() {
-//		launchView.translatesAutoresizingMaskIntoConstraints = false
-//		titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//		dateLabel.translatesAutoresizingMaskIntoConstraints = false
-//		statusImageView.translatesAutoresizingMaskIntoConstraints = false
-//
-//		NSLayoutConstraint.activate ([
-//			launchView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constants.LaunchView.insetBottom),
-//			launchView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.LaunchView.insetLeft),
-//			launchView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: Constants.LaunchView.insetRight),
-//			launchView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.LaunchView.insetTop),
-//			launchView.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.LaunchView.heightItem),
-//
-//			titleLabel.topAnchor.constraint(equalTo: launchView.topAnchor, constant: Constants.TitleLabel.insetTop),
-//			titleLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: Constants.TitleLabel.insetLeft),
-//			titleLabel.rightAnchor.constraint(equalTo:  statusImageView.leftAnchor, constant: Constants.TitleLabel.insetRight),
-//			titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.TitleLabel.height),
-//
-//			dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-//			dateLabel.leftAnchor.constraint(equalTo: launchView.leftAnchor, constant: Constants.DateLabel.insetLeft),
-//			dateLabel.rightAnchor.constraint(equalTo:  statusImageView.leftAnchor, constant: Constants.DateLabel.insetRight),
-//			dateLabel.bottomAnchor.constraint(equalTo: launchView.bottomAnchor, constant: Constants.DateLabel.insetBottom),
-//
-//			statusImageView.centerYAnchor.constraint(equalTo: launchView.centerYAnchor),
-//			statusImageView.rightAnchor.constraint(equalTo: launchView.rightAnchor, constant: Constants.StatusImageView.insetRight),
-//			statusImageView.widthAnchor.constraint(equalToConstant: Constants.StatusImageView.width),
-//			statusImageView.heightAnchor.constraint(equalToConstant: Constants.StatusImageView.height),
-//		])
+		posterImageView.translatesAutoresizingMaskIntoConstraints = false
+		titleLabel.translatesAutoresizingMaskIntoConstraints = false
+		overviewLabel.translatesAutoresizingMaskIntoConstraints = false
+		releaseDateLabel.translatesAutoresizingMaskIntoConstraints = false
+		ratingLabel.translatesAutoresizingMaskIntoConstraints = false
+
+		NSLayoutConstraint.activate ([
+			posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+			posterImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
+			posterImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16),
+			posterImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+
+
+			titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -16),
+			titleLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: 12),
+			titleLabel.rightAnchor.constraint(equalTo:  contentView.rightAnchor, constant: -16),
+
+			overviewLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
+			overviewLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+			overviewLabel.rightAnchor.constraint(equalTo:  titleLabel.rightAnchor),
+
+			releaseDateLabel.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 12),
+			releaseDateLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+			releaseDateLabel.rightAnchor.constraint(equalTo:  titleLabel.rightAnchor),
+
+
+			ratingLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+			ratingLabel.rightAnchor.constraint(equalTo:  titleLabel.rightAnchor),
+			ratingLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+		])
 	}
 
 	private func configureUI() {

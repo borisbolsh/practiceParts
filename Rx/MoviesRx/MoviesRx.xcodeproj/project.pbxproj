@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451F468028CA6CE800260CAB /* MovieListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F467F28CA6CE800260CAB /* MovieListViewViewModel.swift */; };
+		451F468228CA709800260CAB /* MovieNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F468128CA709800260CAB /* MovieNetworkService.swift */; };
 		4531EB2128C7C02000911B02 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531EB2028C7C02000911B02 /* MainTabController.swift */; };
 		4531EB2428C7C12400911B02 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531EB2328C7C12400911B02 /* MovieListViewController.swift */; };
 		4531EB2728C7C16300911B02 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531EB2628C7C16300911B02 /* MovieSearchViewController.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		25E96723C08FE0F2E70361B6 /* Pods-RxToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxToDoList.release.xcconfig"; path = "Target Support Files/Pods-RxToDoList/Pods-RxToDoList.release.xcconfig"; sourceTree = "<group>"; };
+		451F467F28CA6CE800260CAB /* MovieListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewViewModel.swift; sourceTree = "<group>"; };
+		451F468128CA709800260CAB /* MovieNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetworkService.swift; sourceTree = "<group>"; };
 		4531EB2028C7C02000911B02 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		4531EB2328C7C12400911B02 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		4531EB2628C7C16300911B02 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				4581593528C699430025BD7A /* Protocols */,
+				451F468128CA709800260CAB /* MovieNetworkService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				45A30E8A28C9361100C84019 /* MovieViewModel.swift */,
+				451F467F28CA6CE800260CAB /* MovieListViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -359,11 +365,13 @@
 				4531EB2428C7C12400911B02 /* MovieListViewController.swift in Sources */,
 				4531EB2928C7C18000911B02 /* Movie.swift in Sources */,
 				4587156B28C3E5B100F69EF5 /* Task.swift in Sources */,
+				451F468228CA709800260CAB /* MovieNetworkService.swift in Sources */,
 				4531EB2728C7C16300911B02 /* MovieSearchViewController.swift in Sources */,
 				4587155528C3DF0E00F69EF5 /* TasksListViewController.swift in Sources */,
 				4531EB2C28C7CF6E00911B02 /* UIImage+Ext.swift in Sources */,
 				4587155128C3DF0E00F69EF5 /* AppDelegate.swift in Sources */,
 				4587157028C3F60800F69EF5 /* Resources.swift in Sources */,
+				451F468028CA6CE800260CAB /* MovieListViewViewModel.swift in Sources */,
 				4531EB2128C7C02000911B02 /* MainTabController.swift in Sources */,
 				45A30E8B28C9361100C84019 /* MovieViewModel.swift in Sources */,
 				4587155328C3DF0E00F69EF5 /* SceneDelegate.swift in Sources */,

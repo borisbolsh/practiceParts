@@ -4,6 +4,9 @@ protocol MovieService {
 //	func fetchMovies(from endpoint: Endpoint, params: [String: String]?, successHandler: @escaping (_ response: MoviesResponse) -> Void, errorHandler: @escaping(_ error: Error) -> Void)
 //	func fetchMovie(id: Int, successHandler: @escaping (_ response: Movie) -> Void, errorHandler: @escaping(_ error: Error) -> Void)
 //	func searchMovie(query: String, params: [String: String]?, successHandler: @escaping (_ response: MoviesResponse) -> Void, errorHandler: @escaping(_ error: Error) -> Void)
+	func fetchMovies(from endpoint: Endpoint, params: [String: String]?, successHandler: @escaping (_ response: Bool) -> Void, errorHandler: @escaping(_ error: Error) -> Void)
+	func fetchMovie(id: Int, successHandler: @escaping (_ response: Movie) -> Void, errorHandler: @escaping(_ error: Error) -> Void)
+	func searchMovie(query: String, params: [String: String]?, successHandler: @escaping (_ response: Movie) -> Void, errorHandler: @escaping(_ error: Error) -> Void)
 }
 
 public enum Endpoint: String, CustomStringConvertible, CaseIterable {
