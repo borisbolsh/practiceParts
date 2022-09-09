@@ -1,6 +1,7 @@
 import Foundation
 
 final class MovieNetworkService: MovieService {
+	public static let shared = MovieNetworkService()
 	private init() {}
 	private let apiKey = "XXXXXXXX"
 	private let baseAPIURL = "https://imdb-api.com/"

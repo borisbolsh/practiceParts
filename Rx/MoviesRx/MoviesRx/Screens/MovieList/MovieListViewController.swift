@@ -6,7 +6,7 @@ final class MovieListViewController: UIViewController {
 	private let segmentControl = UISegmentedControl()
 	private let tableView = UITableView()
 
-//	private var movieListViewViewModel: MovieListViewViewModel!
+	private var movieListViewViewModel: MovieListViewViewModel?
 	private let disposeBag = DisposeBag()
 
 	override func viewDidLoad() {
@@ -16,6 +16,14 @@ final class MovieListViewController: UIViewController {
 		setupSubviews()
 		setupConstraints()
 		self.navigationItem.titleView = segmentControl
+		setupListViewModel()
+	}
+
+	private func setupListViewModel() {
+		movieListViewViewModel = MovieListViewViewModel(endpoint: segmentControl.rx.selectedSegmentIndex
+				.map { Endpoint(index: $0) ?? .nowPlaying }
+				.asDriver(onErrorJustReturn: .nowPlaying)
+				, movieService: MovieNetworkService.shared)
 	}
 
 	private func setupSubviews() {

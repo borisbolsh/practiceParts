@@ -15,4 +15,6 @@ final class MovieListViewViewModel {
 			}).disposed(by: disposeBag)
 	}
 
+
+	private func fetchMovies(endpoint: Endpoint) {}
 }
