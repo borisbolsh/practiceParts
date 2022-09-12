@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4512252C28C51ACB008B8B69 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512252B28C51ACB008B8B69 /* LoginViewModel.swift */; };
-		453D722428C46E0D00A509B8 /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453D722328C46E0D00A509B8 /* AddNewTaskViewController.swift */; };
+		4512252C28C51ACB008B8B69 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512252B28C51ACB008B8B69 /* UserViewModel.swift */; };
 		4553CDAF28CBC21B005FFA64 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4553CDAE28CBC21B005FFA64 /* DataModel.swift */; };
 		4553CDB428CBC3AE005FFA64 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4553CDB328CBC3AE005FFA64 /* APIRequest.swift */; };
+		4563438728CC9ADF00BA689D /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563438528CC9ADF00BA689D /* UserDetailViewController.swift */; };
+		4563438828CC9ADF00BA689D /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4563438628CC9ADF00BA689D /* UserDetailViewController.xib */; };
 		4587155128C3DF0E00F69EF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587155028C3DF0E00F69EF5 /* AppDelegate.swift */; };
 		4587155328C3DF0E00F69EF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587155228C3DF0E00F69EF5 /* SceneDelegate.swift */; };
 		4587155A28C3DF1000F69EF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4587155928C3DF1000F69EF5 /* Assets.xcassets */; };
@@ -25,10 +26,11 @@
 /* Begin PBXFileReference section */
 		0F2B03AE42C7DED41C8E7815 /* Pods-RxUsersList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxUsersList.release.xcconfig"; path = "Target Support Files/Pods-RxUsersList/Pods-RxUsersList.release.xcconfig"; sourceTree = "<group>"; };
 		25E96723C08FE0F2E70361B6 /* Pods-RxToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxToDoList.release.xcconfig"; path = "Target Support Files/Pods-RxToDoList/Pods-RxToDoList.release.xcconfig"; sourceTree = "<group>"; };
-		4512252B28C51ACB008B8B69 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		453D722328C46E0D00A509B8 /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
+		4512252B28C51ACB008B8B69 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		4553CDAE28CBC21B005FFA64 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		4553CDB328CBC3AE005FFA64 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		4563438528CC9ADF00BA689D /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		4563438628CC9ADF00BA689D /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		4587154D28C3DF0E00F69EF5 /* RxUsersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxUsersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4587155028C3DF0E00F69EF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4587155228C3DF0E00F69EF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		4512252928C51AAB008B8B69 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4512252B28C51ACB008B8B69 /* LoginViewModel.swift */,
+				4512252B28C51ACB008B8B69 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -177,7 +179,8 @@
 		45C6DBF928C4CCE50015F19C /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				453D722328C46E0D00A509B8 /* AddNewTaskViewController.swift */,
+				4563438528CC9ADF00BA689D /* UserDetailViewController.swift */,
+				4563438628CC9ADF00BA689D /* UserDetailViewController.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				4587155D28C3DF1000F69EF5 /* LaunchScreen.storyboard in Resources */,
 				4587155A28C3DF1000F69EF5 /* Assets.xcassets in Resources */,
+				4563438828CC9ADF00BA689D /* UserDetailViewController.xib in Resources */,
 				45CED27B28C4FB5C00BBF56E /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,10 +325,10 @@
 				45CED27928C4FA3800BBF56E /* MainViewController.swift in Sources */,
 				4553CDAF28CBC21B005FFA64 /* DataModel.swift in Sources */,
 				4587155328C3DF0E00F69EF5 /* SceneDelegate.swift in Sources */,
-				453D722428C46E0D00A509B8 /* AddNewTaskViewController.swift in Sources */,
+				4563438728CC9ADF00BA689D /* UserDetailViewController.swift in Sources */,
 				4587156E28C3EED400F69EF5 /* UserCell.swift in Sources */,
 				4553CDB428CBC3AE005FFA64 /* APIRequest.swift in Sources */,
-				4512252C28C51ACB008B8B69 /* LoginViewModel.swift in Sources */,
+				4512252C28C51ACB008B8B69 /* UserViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

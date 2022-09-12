@@ -3,15 +3,18 @@ import RxSwift
 import RxCocoa
 
 final class MainViewController: UIViewController {
-	@IBOutlet private var usernameTextField: UITextField!
-	@IBOutlet private var passwordTextField: UITextField!
-	@IBOutlet private var loginBtn: UIButton!
+	@IBOutlet private var searchTextField: UITextField!
+	@IBOutlet private var tableView: UITableView!
 
-	private let loginViewModel: LoginViewModel
+	let userViewModelInstance = UserViewModel()
+	let userList = BehaviorRelay<[UserDetailModel]>(value: [])
+	let filteredList = BehaviorRelay<[UserDetailModel]>(value: [])
+	var controller: UserDetailViewController?
+
 	private let disposeBag = DisposeBag()
 
-	init(loginViewModel: LoginViewModel = LoginViewModel()) {
-		self.loginViewModel = loginViewModel
+	init(controller: UserDetailViewController = UserDetailViewController()) {
+		self.controller = controller
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -21,21 +24,67 @@ final class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
-		usernameTextField.becomeFirstResponder()
-
-		usernameTextField.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.usernameTextPublishSubject).disposed(by: disposeBag)
-		passwordTextField.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.passwordTextPublishSubject).disposed(by: disposeBag)
-
-		loginViewModel.isValid().bind(to: loginBtn.rx.isEnabled).disposed(by: disposeBag)
-		loginViewModel.isValid().map { $0 ? 1 : 0.1 }.bind(to: loginBtn.rx.alpha).disposed(by: disposeBag)
+		self.title = "Users"
+		userViewModelInstance.fetchUserList()
+		setupSubviews()
+		bindUI()
 	}
 
-	@IBAction func loginBtnTapped(_ sender: UIButton) {
-		print("login tapped")
+	private func setupSubviews() {
+		tableView.register(UserCell.self, forCellReuseIdentifier: String(describing: UserCell.self))
 	}
-}
 
-extension LoginViewController {
+	func bindUI() {
+		userViewModelInstance.userViewModelObserver.subscribe(onNext: { (value) in
+				self.filteredList.accept(value)
+				self.userList.accept(value)
+		},onError: { error in
+				self.errorAlert()
+		}).disposed(by: disposeBag)
 
+		tableView.tableFooterView = UIView()
+
+		filteredList.bind(to: tableView.rx.items(
+			cellIdentifier: String(describing: UserCell.self),
+			cellType: UserCell.self)
+		) { row, model, cell in
+				cell.configure(model: model)
+		}.disposed(by: disposeBag)
+
+		tableView.rx.itemSelected.subscribe(onNext: { (indexPath) in
+				self.tableView.deselectRow(at: indexPath, animated: true)
+				self.controller?.userDetail.accept(self.filteredList.value[indexPath.row])
+				self.controller?.userDetail.value.isFavObservable.subscribe(onNext: { _ in
+						self.tableView.reloadData()
+				}).disposed(by: self.disposeBag)
+				self.navigationController?.pushViewController(self.controller ?? UserDetailViewController(), animated: true)
+		}).disposed(by: disposeBag)
+
+		Observable.combineLatest(userList.asObservable(), searchTextField.rx.text, resultSelector: { users, search in
+			return users.filter { (user) -> Bool in
+				self.filterUserList(userModel: user, searchText: search)
+			}
+		}).bind(to: filteredList).disposed(by: disposeBag)
+	}
+
+	//Search function
+	func filterUserList(userModel: UserDetailModel,
+											searchText: String?) -> Bool {
+			if let search = searchText,
+					!search.isEmpty,
+					!(userModel.userData.first_name?.contains(search) ?? false) {
+					return false
+			}
+			return true
+	}
+
+	func errorAlert() {
+		let alert = UIAlertController(title: "Error",
+																	message: "Check your Internet connection and Try Again!",
+																	preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "Ok",
+																	style: .cancel,
+																	handler: nil))
+		self.present(alert, animated: true, completion: nil)
+	}
 }
