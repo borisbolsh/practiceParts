@@ -30,6 +30,7 @@ final class Resources {
 			static let new = "New"
 			static let popular = "Popular"
 			static let upcoming = "Upcoming"
+			static let top250 = "Top250"
 		}
 	}
 }

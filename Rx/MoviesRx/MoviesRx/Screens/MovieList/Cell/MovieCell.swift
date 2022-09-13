@@ -83,10 +83,10 @@ final class MovieCell: UITableViewCell {
 
 extension MovieCell: MovieCellInput {
 	func configure(viewModel: MovieViewModel) {
-//		titleLabel.text = viewModel.title
-//		overviewLabel.text = viewModel.overview
-//		releaseDateLabel.text = viewModel.releaseDate
-//		ratingLabel.text = viewModel.rating
-//		posterImageView.kf.setImage(with: viewModel.posterURL)
+		titleLabel.text = viewModel.title
+		overviewLabel.text = viewModel.overview
+		releaseDateLabel.text = viewModel.releaseDate
+		ratingLabel.text = viewModel.rating
+		posterImageView.kf.setImage(with: URL(string: viewModel.posterURL))
 	}
 }

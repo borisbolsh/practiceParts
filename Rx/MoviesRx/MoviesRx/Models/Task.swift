@@ -1,13 +1,12 @@
 import Foundation
 
-struct Task {
-	let title: String
-	let description: String
-	let priority: Priority
+struct SearchResponse: Decodable {
+	let results: [SearchResult]
 }
 
-enum Priority: Int {
-	case high
-	case medium
-	case low
+struct SearchResult: Decodable {
+	let id: String
+	let image: String
+	let title: String
+	let description: String
 }
