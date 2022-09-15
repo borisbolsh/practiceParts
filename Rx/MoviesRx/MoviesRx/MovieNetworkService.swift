@@ -3,8 +3,8 @@ import Foundation
 final class MovieNetworkService: MovieService {
 	public static let shared = MovieNetworkService()
 	private init() {}
-	private let apiKey = "XXXXXX"
-	private let baseAPIURL = "https://imdb-api.com/"
+	private let apiKey = "k_3o2jmmhk"
+	private let baseAPIURL = "https://imdb-api.com"
 	private let urlSession = URLSession.shared
 
 	func fetchMovies(from endpoint: Endpoint,

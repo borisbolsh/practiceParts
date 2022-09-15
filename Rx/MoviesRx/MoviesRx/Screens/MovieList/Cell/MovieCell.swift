@@ -3,6 +3,7 @@ import Kingfisher
 
 protocol MovieCellInput {
 	func configure(viewModel: MovieViewModel)
+	func configure(viewModel: SearchResultViewModel)
 }
 
 final class MovieCell: UITableViewCell {
@@ -17,6 +18,7 @@ final class MovieCell: UITableViewCell {
 	override init(style: CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setupUI()
+		setupConstraints()
 		configureUI()
 	}
 
@@ -45,11 +47,11 @@ final class MovieCell: UITableViewCell {
 		NSLayoutConstraint.activate ([
 			posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
 			posterImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
-			posterImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16),
+			posterImageView.widthAnchor.constraint(equalToConstant: contentView.frame.width / 3),
 			posterImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
 
 
-			titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -16),
+			titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
 			titleLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: 12),
 			titleLabel.rightAnchor.constraint(equalTo:  contentView.rightAnchor, constant: -16),
 
@@ -69,15 +71,16 @@ final class MovieCell: UITableViewCell {
 	}
 
 	private func configureUI() {
-//		self.backgroundColor = .clear
-//		contentView.backgroundColor = .clear
-//		launchView.backgroundColor = Resourses.Colors.secondaryBackground
-//
-//		launchView.layer.cornerRadius = Constants.LaunchView.cornerRadius
-//
-//		titleLabel.font = Resourses.Fonts.detailsLaunchesTitle
-//		titleLabel.textColor = Resourses.Colors.lightText
-//		dateLabel.textColor = Resourses.Colors.secondaryText
+		titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+		titleLabel.numberOfLines = 0
+
+		overviewLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+		overviewLabel.numberOfLines = 0
+
+		releaseDateLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+		releaseDateLabel.numberOfLines = 1
+
+		posterImageView.contentMode = .scaleAspectFit
 	}
 }
 
@@ -87,6 +90,14 @@ extension MovieCell: MovieCellInput {
 		overviewLabel.text = viewModel.overview
 		releaseDateLabel.text = viewModel.releaseDate
 		ratingLabel.text = viewModel.rating
+		posterImageView.kf.setImage(with: URL(string: viewModel.posterURL))
+	}
+
+	func configure(viewModel: SearchResultViewModel) {
+		titleLabel.text = viewModel.title
+		overviewLabel.text = ""
+		releaseDateLabel.text = viewModel.releaseDate
+		ratingLabel.text = ""
 		posterImageView.kf.setImage(with: URL(string: viewModel.posterURL))
 	}
 }

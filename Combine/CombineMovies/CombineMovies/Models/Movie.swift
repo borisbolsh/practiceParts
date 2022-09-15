@@ -4,7 +4,7 @@ struct MoviesResponse: Decodable {
 	let items: [Movie]
 }
 
-struct Movie: Decodable {
+struct Movie: Decodable, Hashable {
 	let id: String
 	let rank: String?
 	let title: String
